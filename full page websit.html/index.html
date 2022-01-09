@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kgold's gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    header {
+      position: relative;
+    }
+
+    .bg-img {
+      background: rgba(0, 0, 0, 0.8)url("bg.jpg");
+      background-size: cover;
+      height: 70vh;
+    }
+
+    .navbar {
+
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 75px;
+      display: flex;
+      justify-content: space-between;
+      position: sticky;
+    }
+
+    .logo {
+      height: 75px;
+      border-radius: 50%;
+      width: auto;
+      margin-left: 67px;
+      filter: invert(1);
+    }
+
+    ul li {
+      list-style-type: none;
+      display: inline-block;
+    }
+
+    ul li a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      padding: 25px 42px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    ul li a:hover {
+      color: #ed563b;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button {
+      margin-right: 25px;
+      height: 56px;
+      background-color: #ed563b;
+      border: none;
+      border-radius: 13px;
+
+    }
+
+    button a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      outline: none;
+      line-height: 10%;
+      font-size: 25px;
+      font-weight: 600;
+      padding: 25px 34px;
+
+    }
+
+    .mid-header {
+      text-align: center;
+      position: absolute;
+      width: 80%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+
+    .banner {
+      margin-top: 25px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 85px;
+      letter-spacing: 1px;
+    }
+
+    span {
+      color: #ed563b;
+      text-align: start;
+    }
+
+    button a:hover {
+      background-color: rgba(250, 248, 248, 0.1);
+      transition: all .5s ease-in-out;
+
+
+    }
+
+    .center {
+      color: black;
+
+    }
+
+    .center-head {
+      text-align: center;
+      margin-top: 80px;
+      margin-bottom: 35px;
+
+    }
+
+    .mid-class {
+      line-height: 66px;
+    }
+
+    .box {
+      color: black;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-right: 125px;
+      margin-left: 125px;
+
+
+    }
+
+    .box-1 {
+      margin: 24px;
+      text-align: center;
+    }
+
+    .box-1 h3 {
+      margin-bottom: 12px;
+      color: #ed563b;
+      font-weight: 600;
+
+    }
+
+    .box-1 p {
+      word-spacing: 2px;
+      line-height: 20px;
+
+    }
+
+    /* css for bottom section */
+    .bottom {
+      background-image: url('mid-image.jpg');
+      background-size: cover;
+      height: 250px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 39px;
+      position: relative;
+    }
+
+    .main {
+      line-height: 35px;
+      margin-left: 26%;
+    }
+
+    #btn {
+      margin-top: 10px;
+      margin-left: 35%;
+      border-radius: 34px;
+      padding: 12px;
+      font-size: 23px;
+      font-style: bold;
+      text-align: center;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: all 0.5s ease-in-out;
+
+    }
+
+    .courses {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      color: black;
+      height: 344px;
+      width: 870px;
+      position: relative;
+      top: 25%;
+      left: 21%;
+
+
+
+    }
+
+    .courses h1 {
+      margin-left: 35%;
+      margin-bottom: 50px;
+    }
+
+    /* training section starts here  */
+    .training-head {
+      color: black;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+    }
+
+    .training-left button {
+      position: absolute;
+      left: 140px;
+
+    }
+
+    .training-2 {
+      color: blanchedalmond;
+      font-weight: 700;
+      font-size: 34px;
+      padding: 13px;
+      justify-items: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .training-2:hover {
+      color: black;
+      background-color: background-color: rgba(0, 0, 0, 0.5);
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+
+    }
+
+    .training-1 {
+      width: 400px;
+      line-height: 72px;
+      text-align: center;
+      margin-bottom: 15px;
+      box-shadow: 1px 3px 5px #ddc1c1;
+    }
+
+
+
+    .para {
+      font-size: 15px;
+      text-transform: lowercase;
+    }
+
+    .training-3 {
+      width: 746px;
+      line-height: 25px;
+      word-spacing: 2px;
+
+    }
+
+    .training-btn {
+      color: black;
+      font-weight: 700;
+      font-size: 34px;
+      padding: 13px;
+      justify-items: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .training-btn:hover {
+      color: blanchedalmond;
+      background-color: background-color: rgba(0, 0, 0, 0.5);
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .training-3.head {
+      margin: 12px;
+      font-weight: 500;
+
+    }
+
+    /* css for table section */
+    .table {
+
+      background: rgba(8, 8, 8, 0.1)url("sam-moqadam-Z4Q9KHw9ofE-unsplash.jpg");
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .table-1 {
+      text-align: center;
+      margin-top: 5px;
+      position: relative;
+      top: 10vh;
+      line-height: 32px;
+      font-weight: 400;
+    }
+
+    .table-2 {
+      color: rgb(252, 243, 243);
+      font-weight: 600;
+    }
+
+    table {
+      position: relative;
+      top: 18vh;
+      left: 24%;
+      border-collapse: collapse;
+    }
+
+    tr,
+    td {
+      border: 3px solid rgb(238, 216, 216);
+      padding: 54px
+    }
+
+    /* css for trainer section */
+    .trainer {
+      color: black;
+
+    }
+
+    .expert {
+      text-align: center;
+      margin: 12px 0 12px 0;
+    }
+
+    .expert-para {
+      text-align: center;
+      /* height: auto; */
+      width: 150vh;
+      margin: 16px -42% 20px 16%;
+      font-size: 15px;
+
+    }
+
+    .trainer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-item: center;
+      margin: 12px;
+    }
+
+    .about-trainee {
+      box-sizing: border-box;
+      height: auto;
+      width: 400px;
+      box-shadow: 0px 1px 6px 2px #ddc1c1;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-left: 12px;
+      font-size: 12px;
+      word-spacing: 2px;
+      text-transform: lowercase;
+      padding: 12px;
+
+    }
+
+    .trainer-pic {
+      border-radius: 33px;
+    }
+
+    .trainee-para {
+      text-align: center;
+    }
+
+    /* css for form section */
+    .map-form {
+      display: flex;
+      margin-top: 10vh;
+
+    }
+
+    .map {
+      margin-left: 10px;
+    }
+
+    .form {
+      /* border: 1px solid black; */
+      background: rgba(0, 0, 0, 0.8)url("bg-img-2.jpeg");
+      background-size: cover;
+      background-repeat:no-repeat;
+      width: 100vh;
+      height: auto;
+      margin-left: 80px;
+    }
+
+    .in-form {
+      margin-left: 10vh;
+      margin-top: 10vh;
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: space-evenly;
+      box-sizing: border-box;
+      width: 80vh;
+     
+     
+     
+    }
+
+    .form-1 {
+      padding: 10px;
+      margin: 10px;
+      width: 45%;
+
+    }
+
+    .name {
+      width: 40vh;
+      display: flex;
+    }
+
+    .out-form {
+      margin-left: 10vh;
+     
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 80vh;
+      
+    }
+
+    .form-2 {
+      padding: 10px;
+      margin: 10px;
+
+    }
+
+    .msg {
+      padding: 35px 0px 35px 0px;
+    }
+
+    ::-webkit-input-placeholder {
+      margin-left: 6px;
+    }
+
+    .btn-2 {
+      padding:12px;
+      font-weight: 700;
+      text-transform: capitalize;
+      margin-top: 8vh;
+      margin-left: 10vh;
+    }
+    .btn-2:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: all 0.5s ease-in-out;
+      color:white;
+
+    }
+    /* .main-form{
+      width:100vh;
+      margin: 10vh;
+      background-color: white;
+    } */
+    footer{
+      color:black;
+      text-align: center;
+    }
+    .form input{
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="bg-img">
+      <div class="navbar">
+        <img class="logo" src="logo.png" />
+        <ul>
+          <li><a href="#"> home</a></li>
+
+          <li><a href="#">about</a></li>
+          <li><a href="#"> contact us</a></li>
+          <li><a href="#"> schedule</a></li>
+          <button><a href="#">sign up</a></button>
+        </ul>
+      </div>
+      <div class="mid-header">
+        <h3 class="head">work harder,get stronger</h3>
+        <h1 class="banner">easy with our<span> gym </span></h1>
+        <button class="btn">
+          <a href="#"> become a member</a>
+        </button>
+      </div>
+    </div>
+    <div class="center">
+      <div class="center-head">
+        <h1 class="mid-class">choose <span> program </span></h1>
+        <p class="mid-class">
+          join with or exclusive member pack of rs=1599/- and get 3 months
+          free.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="box">
+      <div class="box-1">
+        <h3>basic program</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+          ullam esse voluptatem commodi, nulla accusantium soluta dicta nam
+          ducimus recusandae? Exercitationem corrupti officia neque odit?
+          Ipsam, eos cumque! Nemo, voluptatibus?
+        </p>
+      </div>
+      <div class="box-1">
+        <h3>advance muscle course</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+          ullam esse voluptatem commodi, nulla accusantium soluta dicta nam
+          ducimus recusandae? Exercitationem corrupti officia neque odit?
+          Ipsam, eos cumque! Nemo, voluptatibus?
+        </p>
+      </div>
+      <div class="box-1">
+        <h3>new gym training</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+          ullam esse voluptatem commodi, nulla accusantium soluta dicta nam
+          ducimus recusandae? Exercitationem corrupti officia neque odit?
+          Ipsam, eos cumque! Nemo, voluptatibus?
+        </p>
+      </div>
+      <div class="box-1">
+        <h3>yoga training</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+          ullam esse voluptatem commodi, nulla accusantium soluta dicta nam
+          ducimus recusandae? Exercitationem corrupti officia neque odit?
+          Ipsam, eos cumque! Nemo, voluptatibus?
+        </p>
+      </div>
+      <div class="box-1">
+        <h3>basic muscle course</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+          ullam esse voluptatem commodi, nulla accusantium soluta dicta nam
+          ducimus recusandae? Exercitationem corrupti officia neque odit?
+          Ipsam, eos cumque! Nemo, voluptatibus?
+        </p>
+      </div>
+      <div class="box-1">
+        <h3>body building course</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+          ullam esse voluptatem commodi, nulla accusantium soluta dicta nam
+          ducimus recusandae? Exercitationem corrupti officia neque odit?
+          Ipsam, eos cumque! Nemo, voluptatibus?
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="bottom">
+    <div class="bottom-2">
+      <h1 class="main">
+        don't <span> think </span> ,begin <span> today! </span>
+      </h1>
+      <p class="main-root">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolorem
+        harum, consequatur incidunt alias non cum.
+      </p>
+      <button class="btn main" id="btn">become a member</button>
+    </div>
+  </div>
+  <div class="courses">
+    <h1>our <span> classes </span></h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad veniam
+      dignissimos nisi dolores?
+    </p>
+  </div>
+  <div class="training-head">
+    <div class="training-left">
+      <h3 class="training-1">first training class</h3>
+      <h3 class="training-1">second training class</h3>
+      <h3 class="training-1">third training class</h3>
+      <h3 class="training-1">fourth training class</h3>
+      <button class="training-2">view all schedule</button>
+    </div>
+    <div class="training-right">
+      <img class="training-3" src="img-3.jpg" />
+      <h2 class="training-3 head">first training class</h2>
+      <p class="training-3 para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+        provident labore nihil nemo earum mollitia beatae, optio illum aliquid
+        corporis, facilis, temporibus laboriosam velit delectus dolores veniam
+        sequi dolor unde. Quas molestiae iusto alias, obcaecati nihil
+        molestias quod ad aut!
+      </p>
+      <button class="training-btn">view schedule</button>
+    </div>
+  </div>
+  <div class="table">
+    <!-- <img class="table-img" src="sam-moqadam-Z4Q9KHw9ofE-unsplash.jpg"> -->
+    <div class="table-1">
+      <h1 class="schedule head"> classes <span> schedule </span></h1>
+      <p class="schedule para">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
+        tempora. Sequi quos quisquam iure asperiores.
+      </p>
+      <ul class="days">
+        <li>monday /
+
+        </li>
+        <li>tuesday /
+
+        </li>
+        <li>wednesday /
+
+        </li>
+        <li>thursday /
+
+        </li>
+        <li>friday
+
+        </li>
+      </ul>
+
+    </div>
+    <div class="table-2">
+      <table>
+
+        <tr>
+
+          <td>morning training</td>
+          <td> 3:00PM-3:30PM</td>
+          <td> william pattam</td>
+        </tr>
+        <tr>
+
+          <td>morning training</td>
+          <td> 7:00PM-8:30PM</td>
+          <td> william pattam</td>
+        </tr>
+        <tr>
+
+          <td>afternoon training</td>
+          <td> 3:00PM-4:30PM</td>
+          <td> william pattam</td>
+        </tr>
+
+
+
+      </table>
+
+    </div>
+  </div>
+  <div class="trainer">
+    <div class="trainer-head">
+      <h1 class="expert">
+        expert <span>
+          trainee
+        </span>
+
+      </h1>
+      <p class="expert-para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae est ducimus possimus consequatur mollitia,
+        maxime, similique consequuntur non te dolore?
+      </p>
+    </div>
+    <div class="trainer-bottom">
+      <div class="about-trainee">
+        <img class="trainer-pic" src="trainer-1.jpeg">
+        <h5>
+          <span>
+            muscle trainer
+
+          </span>
+
+        </h5>
+        <h1>
+          prem khan
+        </h1>
+        <p class="trainee-para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas repudiandae dolore odio.
+        </p>
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="about-trainee">
+        <img class="trainer-pic" src="trainer-2.jpeg">
+        <h5>
+          <span>
+
+            strength trainer
+          </span>
+        </h5>
+        <h1>
+          tulsi das khan
+        </h1>
+        <p class="trainee-para"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat facilis tenetur
+          doloremque.</p>
+        <i class="fab fa-instagram"></i>
+
+      </div>
+      <div class="about-trainee">
+        <img class="trainer-pic" src="trainer-3.jpeg">
+        <h5>
+          <span>
+
+            power trainer
+          </span>
+        </h5>
+        <h1>
+          javed chaurasiya
+        </h1>
+        <p class="trainee-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem est rem sit?
+        </p>
+        <i class="fab fa-instagram"></i>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="map-form">
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19029.420160523932!2d72.86351247960805!3d19.442330966638735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1628000076638!5m2!1sen!2sin"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="form">
+      <div class="main-form">
+
+        <div class="in-form">
+          <input class=" form-1  name" type="text" placeholder="your name*">
+          <input class=" form-1  name" type="text" placeholder="your email *">
+        </div>
+        <div class="out-form">
+          
+          <input class=" form-2" type="text" placeholder="SUBJECT">
+          <input class=" form-2 msg" type="text" placeholder="MESSAGE">
+        </div>
+        <button class="btn-2">
+          send message
+        </button>
+        
+        
+        
+        
+      </div>
+    </div>
+    </div>
+    <footer>
+     <p>
+      copyright &copy vikas yadav; 
+    </p> 
+    </footer>
+</body>
+
+</html>
